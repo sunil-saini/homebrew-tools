@@ -1,6 +1,6 @@
 cask "infrapulse" do
-  version "0.0.6"
-  sha256 "ce749b3eced3a089e2c060306694d9ab6bc302df148f25e244033a9af64ba37a"
+  version "0.0.1"
+  sha256 "fdef6d5bd75a0ae96be0923134e2b29ce9434c3ee162b0a2bf6a42b9f0876c92"
 
   url "https://github.com/sunil-saini/homebrew-tools/releases/download/v#{version}/InfraPulse-#{version}.zip"
   name "InfraPulse"
