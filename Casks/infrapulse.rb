@@ -55,6 +55,8 @@ cask "infrapulse" do
       "#{Dir.home}/Library/LaunchAgents/com.infrapulse.plist",
     ]
     system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/InfraPulse.app"]
+    # launchd refuses to import a quarantined plist (error 155, surfaced as 5).
+    system_command "/usr/bin/xattr", args: ["-d", "com.apple.quarantine", "#{Dir.home}/Library/LaunchAgents/com.infrapulse.plist"], must_succeed: false
     system_command "/bin/launchctl", args: ["bootstrap", "gui/#{Process.uid}", "#{Dir.home}/Library/LaunchAgents/com.infrapulse.plist"]
   end
 
